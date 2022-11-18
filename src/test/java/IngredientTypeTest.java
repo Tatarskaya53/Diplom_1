@@ -2,18 +2,20 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
 import praktikum.IngredientType;
+
 import static org.junit.Assert.assertEquals;
 
 @RunWith(Parameterized.class)
 public class IngredientTypeTest {
 
-    @Parameterized.Parameters
+    @Parameterized.Parameters(name = "Тестовые данные: {0}, {1}")
     public static Object[][] ingredientTypeData() {
-        return new Object[][] {
+        return new Object[][]{
                 {IngredientType.SAUCE, "SAUCE"},
                 {IngredientType.FILLING, "FILLING"},
         };
     }
+
     private final IngredientType actual;
     private final String expected;
 
